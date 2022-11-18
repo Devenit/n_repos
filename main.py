@@ -3,12 +3,13 @@ from random import randint
 from PyQt5 import uic
 from PyQt5.QtGui import QPainter, QColor
 from PyQt5.QtWidgets import QMainWindow, QApplication
+from ui1 import Ui_MainWindow
 
 
-class Example(QMainWindow):
+class Example(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('UI.ui', self)
+        self.setupUi(self)
         self.flag = False
         self.pushButton.clicked.connect(self.drawf)
 
@@ -24,7 +25,7 @@ class Example(QMainWindow):
             self.x = randint(100, 370)
             self.y = randint(100, 260)
             c1, c2, c3 = randint(0, 255), randint(0, 255), randint(0, 255)
-            self.qp.setPen(QColor(255, 255, 0))
+            self.qp.setPen(QColor(c1, c2, c3))
             self.qp.drawEllipse(self.x, self.y, self.r, self.r)
 
 
