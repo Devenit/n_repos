@@ -24,7 +24,7 @@ class Example(QMainWindow):
             self.x = randint(100, 370)
             self.y = randint(100, 260)
             c1, c2, c3 = randint(0, 255), randint(0, 255), randint(0, 255)
-            self.qp.setPen(QColor(c1, c2, c3))
+            self.qp.setPen(QColor(255, 255, 0))
             self.qp.drawEllipse(self.x, self.y, self.r, self.r)
 
 
